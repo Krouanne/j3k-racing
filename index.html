@@ -1,36 +1,217 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------->
+
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>J3K Racing</title>
-        <link rel="icon" type="image/x-icon" href="basej3k/assets/logo.png" />
+        <link rel="icon" type="base/image/png" href="base/img/logo.png" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Tinos:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet" />
-        <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&amp;display=swap" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="basej3k/css/styles.css" rel="stylesheet" />
+        <link href="base/css/styles.css" rel="stylesheet" />
     </head>
-    <body>
-        <!-- Background Video-->
-        <video class="bg-video" playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop"><source src="basej3k/assets/mp4/backvidéo.mp4" type="video/mp4" /></video>
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------->
+
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">J3K Racing</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="#about">Présentation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">Photos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        
+    <!-- ---------------------------------------------------------------------------------------------------------------------->
         <!-- Masthead-->
-        <div class="masthead">
-            <div class="masthead-content text-white">
-                <div class="container-fluid px-4 px-lg-0">
-                    <h1 class="fst-italic lh-1 mb-4">Le site est en cours de création</h1>
-                    <p class="mb-5">Nous travaillons actuellement sur le site, un peu de patience, cela sera bientôt disponible. </p>
+
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase"> </h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5"> </h2>
+                        <a class="btn btn-primary" href="#about">Découvrir l'association </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        
+    <!-- ---------------------------------------------------------------------------------------------------------------------->
+        <!-- About-->
+
+        <section class="about-section text-center" id="about">
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="text-white mb-4">L'Association</h2>
+                        <p class="text-white-50">
+                        J3K Racing est une association sportive, fondé par Alban Dumontel et Kévin Rouanne en 2021. Notre goût pour la compétition et les sports mécaniques nous ont très vite amené à ce projet. 
+                           Voici <a href="https://startbootstrap.com/theme/grayscale/">Notre pressbook</a> Pour avoir davantage d'informations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ---------------------------------------------------------------------------------------------------------------------->
+        <!-- Riders-->
+
+        <section class="text-center" id="riders">
+            <div class="col-lg-12">
+                <div class="col-lg-12">
+                    <br><br>
+                    <h2>Pilotes</h2><br><br>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="riders">
+                                    <img class="prespilotes" src="base/img/portraitalban.png"></img>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="riders">
+                                    <img class="prespilotes" src="base/img/portraitkevin.png"></img>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------->
+        <!-- Projects-->
+
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+                <!-- Featured Project Row-->
+                <div class="row gx-0 mb-4 mb-lg-5 align-items-center">
+                    <div class="col-xl-8 col-lg-7"><img class="img-fluid mb-3 mb-lg-0" src="base/img/partenaires.png" alt="..." /></div>
+                    <div class="col-xl-4 col-lg-5">
+                        <div class="featured-text text-center text-lg-left">
+                            <h4>Ils nous soutiennent</h4>
+                            <p class="text-black-50 mb-0">Voici une présentation des organisations qui nous soutiennents. Nous les remercions en les représentant lors d'événements sportifs ou caritatifs, tout en partageans nos valeurs communes.</p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </section>
+
+        <!-- Marchandise-------------------------------------------------------------------------------------------------------------->
+        <!--
+        <section class="projects-section bg-light" id="projects">
+            <div class="container px-4 px-lg-5">
+
+         
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="base/img/demo-image-01.png" alt="..." /></div>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">Misty</h4>
+                                    <p class="mb-0 text-white-50">An example of where you can put an image of a project, or anything else, along with a description.</p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row gx-0 justify-content-center">
+                    <div class="col-lg-6"><img class="img-fluid" src="base/img/demo-image-02.png" alt="..." /></div>
+                    <div class="col-lg-6 order-lg-first">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-right">
+                                    <h4 class="text-white">Mountains</h4>
+                                    <p class="mb-0 text-white-50">Another example of a project with its respective description. These sections work well responsively as well, try this theme on a small screen!</p>
+                                    <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>-->
+
+
+    <!-- ---------------------------------------------------------------------------------------------------------------------->
+        <!-- Contact-->
+        
+
+
+
+    <section id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">Vous souhaitez me soutenir ?</h2>
+                </div>
+            </div><br><br><br>
+            <div class="row">
+                <div class="col-lg-12">
+                    <form name="sentMessage" id="contactForm" novalidate>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Entrez votre nom.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Entrez votre adresse électronique.">
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Entrez votre message."></textarea>
+                                    <p class="help-block text-danger"></p>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div class="col-lg-12 text-center">
+                                <div id="success"></div>
+                                <button type="submit" class="btn btn-xl">Envoyer</button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </section>
+
+
+        <!-- Footer-->
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; j3k-racing.fr 2021</div></footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
-        <script src="basej3k/js/scripts.js"></script>
+        <script src="base/js/scripts.js"></script>
     </body>
 </html>
