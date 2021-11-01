@@ -10866,7 +10866,7 @@ video.bg-video {
   z-index: 0;
 }
 
-image.bg-image {
+.bg-image {
   position: fixed;
   top: 0;
   left: 0;
