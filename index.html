@@ -252,32 +252,30 @@ Je compte bien travailler comme il se doit pour obtenir de bons résultats malgr
                         <!-- This form is pre-integrated with SB Forms.-->
                         <!-- To make this form functional, sign up at-->
                         <!-- https://startbootstrap.com/solution/contact-forms-->
-
-                        
                         <!-- to get an API token!-->
-                        <form id="contactForm" action="https://usebasin.com/f/9d0c28571237" method="POST" >
+                        <form id="contactForm" action="https://usebasin.com/f/9d0c28571237" method="POST">
                             <!-- Name input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="name" name="name" type="text" >
+                                <input class="form-control" id="name" name="name" type="text" data-sb-validations="required" data-sb-can-submit="no">
                                 <label for="name">Votre nom</label>
                                 <div class="invalid-feedback" data-sb-feedback="name:required">Un nom est requis</div>
                             </div>
                             <!-- Email address input-->
                             <div class="form-floating mb-3">
-                                <input class="form-control" id="email" type="email" name="email" >
+                                <input class="form-control" id="email" type="email" name="email"  data-sb-validations="required,email" data-sb-can-submit="no">
                                 <label for="email-address">Votre adresse mail</label>
                                 <div class="invalid-feedback" data-sb-feedback="email:required">Votre email est requis</div>
                                 <div class="invalid-feedback" data-sb-feedback="email:email">l'adresse mail n'est pas valide.</div>
                             </div>
                             <!-- Message input-->
                             <div class="form-floating mb-3">
-                                <textarea class="form-control" id="message" type="text" name="text"  style="height: 10rem" ></textarea>
+                                <textarea class="form-control" id="message" type="text" name="text"  style="height: 10rem" data-sb-validations="required" data-sb-can-submit="no"></textarea>
                                 <label for="message">Votre message</label>
                                 <div class="invalid-feedback" data-sb-feedback="message:required">Un message est requis.</div>
                             </div>
                             <!-- Submit success message-->
-                  
-                         
+                            <!---->
+                            <!-- This is what your users will see when the form-->
                             <!-- has successfully submitted-->
                             <div class="d-none" id="submitSuccessMessage">
                                 <div class="text-center mb-3">
@@ -287,7 +285,7 @@ Je compte bien travailler comme il se doit pour obtenir de bons résultats malgr
                             </div>
                             <!-- Submit error message-->
                             <!---->
-                           
+                            <!-- This is what your users will see when there is-->
                             <!-- an error submitting the form-->
                             <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Erreur lors de l'envoi de votre message</div></div>
                             <!-- Submit Button-->
@@ -320,21 +318,21 @@ Je compte bien travailler comme il se doit pour obtenir de bons résultats malgr
             </div><br><br><br>
             <div class="row">
                 <div class="col-lg-12">
-                    <form name="sentMessage" id="contactForm" novalidate>                           data-sb-form-api-token="API_TOKEN"
+                    <form name="sentMessage" id="contactForm" novalidate>
                         <div class="row">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Your Name *" id="name" required data-validation-required-message="Entrez votre nom.">
+                                    <input type="text" class="form-control"  id="name" required data-validation-required-message="Entrez votre nom.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" class="form-control" placeholder="Your Email *" id="email" required data-validation-required-message="Entrez votre adresse électronique.">
+                                    <input type="email" class="form-control"  id="email" required data-validation-required-message="Entrez votre adresse électronique.">
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <textarea class="form-control" placeholder="Your Message *" id="message" required data-validation-required-message="Entrez votre message."></textarea>
+                                    <textarea class="form-control"  id="message" required data-validation-required-message="Entrez votre message."></textarea>
                                     <p class="help-block text-danger"></p>
                                 </div>
                             </div>
