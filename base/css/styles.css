@@ -1747,7 +1747,17 @@ progress {
     flex: 0 0 auto;
     width: 33.3333333333%;
   }
-
+  
+  .btn-social {
+  height: 2.5rem;
+  width: 2.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border-radius: 100%;
+ }
+  
   .row-cols-xxl-4 > * {
     flex: 0 0 auto;
     width: 25%;
