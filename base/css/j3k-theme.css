@@ -1,0 +1,272 @@
+/* ==========================================================================
+   J3K Racing — thème noir & jaune (inspiré du pressbook 2027)
+   Chargé après styles.css : surcharge uniquement les couleurs / typos.
+   ========================================================================== */
+
+:root {
+  --j3k-yellow: #ffcc00;
+  --j3k-yellow-dark: #e6b800;
+  --j3k-black: #111111;
+  --j3k-dark: #1c1c1c;
+  --j3k-grey: #262626;
+  --j3k-text: #f2f2f2;
+  --j3k-text-muted: rgba(255, 255, 255, 0.65);
+  --j3k-title-font: "Bebas Neue", "Oswald", Impact, "Arial Narrow", sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--j3k-dark);
+  color: var(--j3k-text);
+}
+
+/* ---------- Titres ---------- */
+h2, .h2 {
+  font-family: var(--j3k-title-font);
+  font-size: 3rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+h2::after {
+  content: "";
+  display: block;
+  width: 4rem;
+  height: 0.3rem;
+  margin: 0.75rem auto 0;
+  background: var(--j3k-yellow);
+}
+h4, .h4 {
+  font-family: var(--j3k-title-font);
+  font-size: 1.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+/* Les classes de texte noir héritées deviennent claires sur fond sombre */
+.text-black { color: var(--j3k-text) !important; }
+.text-black-50 { color: var(--j3k-text-muted) !important; }
+
+a { color: var(--j3k-yellow); }
+a:hover { color: #fff; }
+
+/* ---------- Bandeau jaune (comme sur le pressbook) ---------- */
+.j3k-stripe {
+  height: 3.5rem;
+  background-color: var(--j3k-yellow);
+  background-image:
+    radial-gradient(rgba(0, 0, 0, 0.06) 1px, transparent 1px),
+    radial-gradient(rgba(255, 255, 255, 0.12) 1px, transparent 1px);
+  background-size: 4px 4px, 7px 7px;
+  background-position: 0 0, 2px 3px;
+}
+
+/* ---------- Navigation ---------- */
+#mainNav,
+#mainNav.navbar-shrink {
+  background-color: var(--j3k-black) !important;
+  border-bottom: 0.25rem solid var(--j3k-yellow);
+}
+#mainNav .img-nav {
+  width: auto;
+  height: 2.5rem;
+  margin: 0.5rem 0;
+}
+#mainNav .navbar-toggler {
+  color: var(--j3k-yellow);
+  border-color: var(--j3k-yellow);
+}
+#mainNav .nav-link {
+  color: rgba(255, 255, 255, 0.8) !important;
+  font-family: var(--j3k-title-font);
+  font-size: 1.25rem;
+  letter-spacing: 0.1em;
+}
+#mainNav .nav-link:hover,
+#mainNav .nav-link:focus {
+  color: var(--j3k-yellow) !important;
+}
+@media (min-width: 992px) {
+  #mainNav .nav-link { padding: 1.25rem 1.25rem; }
+}
+/* Menu mobile (Bootstrap JS n'est pas chargé : on gère l'ouverture via .show) */
+@media (max-width: 991.98px) {
+  #mainNav .navbar-collapse.show { display: block; }
+}
+
+/* ---------- Boutons ---------- */
+.btn-primary {
+  color: var(--j3k-black) !important;
+  background-color: var(--j3k-yellow) !important;
+  border-color: var(--j3k-yellow) !important;
+  font-weight: 700;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  color: var(--j3k-yellow) !important;
+  background-color: var(--j3k-black) !important;
+  box-shadow: inset 0 0 0 2px var(--j3k-yellow) !important;
+}
+
+/* ---------- Carousel d'en-tête ---------- */
+.hero-carousel {
+  position: relative;
+  height: 100vh;
+  min-height: 32rem;
+  padding: 0 !important;
+  overflow: hidden;
+  background: var(--j3k-black) !important;
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.2s ease, transform 6s ease;
+}
+.hero-slide.active {
+  opacity: 1;
+  transform: scale(1);
+}
+.hero-carousel::after {
+  /* voile sombre pour la lisibilité du logo */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.35) 0%, rgba(0, 0, 0, 0.55) 70%, var(--j3k-black) 100%);
+  pointer-events: none;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 1rem;
+}
+.hero-logo {
+  width: min(32rem, 80vw);
+  filter: brightness(0) invert(1) drop-shadow(0 4px 12px rgba(0, 0, 0, 0.6));
+  margin-bottom: -2rem;
+}
+.hero-title {
+  font-family: var(--j3k-title-font);
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1;
+  color: #fff;
+  letter-spacing: 0.05em;
+  margin: 0;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+}
+.hero-subtitle {
+  display: inline-block;
+  font-family: var(--j3k-title-font);
+  font-size: clamp(1.1rem, 3vw, 1.6rem);
+  letter-spacing: 0.15em;
+  color: var(--j3k-black);
+  background: var(--j3k-yellow);
+  padding: 0.1rem 0.9rem;
+  margin: 0.75rem 0 2rem;
+}
+.hero-dots {
+  position: absolute;
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+}
+.hero-dots button {
+  width: 2.5rem;
+  height: 0.3rem;
+  padding: 0;
+  border: 0;
+  background: rgba(255, 255, 255, 0.45);
+  cursor: pointer;
+}
+.hero-dots button.active { background: var(--j3k-yellow); }
+
+/* ---------- Sections ---------- */
+.bg-light { background-color: var(--j3k-dark) !important; }
+
+#presentation { background-color: var(--j3k-grey) !important; }
+#moto { background-color: var(--j3k-dark); padding-bottom: 3rem; }
+#boutique { background-color: var(--j3k-grey) !important; padding: 6rem 0; }
+#partenaire { background-color: var(--j3k-dark) !important; padding: 6rem 0; }
+#contact { background-color: var(--j3k-black) !important; }
+
+/* Membres */
+.team-member h4 { color: #fff; margin-top: 1rem; }
+.team-member img {
+  border: 0.35rem solid var(--j3k-yellow);
+}
+.btn-social {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 50%;
+  background: var(--j3k-yellow) !important;
+  color: var(--j3k-black) !important;
+  font-size: 1.25rem;
+}
+.btn-social:hover { background: #fff !important; }
+
+/* Comparateur de motos */
+.comparison-slider-wrapper { background-color: transparent !important; }
+.comparison-slider-wrapper .comparison-slider { border-color: var(--j3k-yellow) !important; }
+.comparison-slider-wrapper .comparison-slider .overlay { color: var(--j3k-black); background: var(--j3k-yellow); }
+.comparison-slider-wrapper .comparison-slider .divider { background-color: var(--j3k-yellow); }
+.comparison-slider-wrapper .comparison-slider .divider::before { background-color: var(--j3k-yellow); }
+.comparison-slider-wrapper .comparison-slider .divider::after { background-color: var(--j3k-black); }
+
+/* Boutique */
+.projects-section .featured-text { border-left-color: var(--j3k-yellow) !important; }
+.projects-section .featured-text h4 { color: #fff; }
+
+/* Partenaires : logos sur tuiles blanches pour rester lisibles */
+#partenaire .col-md-3 > a,
+#partenaire .col-md-3 > img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 9rem;
+  padding: 1rem;
+  background: #fff;
+  border-bottom: 0.3rem solid var(--j3k-yellow);
+  transition: transform 0.2s;
+}
+#partenaire .col-md-3 > img { object-fit: contain; width: 100%; max-width: 100%; }
+#partenaire .col-md-3 > a:hover { transform: translateY(-4px); }
+#partenaire .col-md-3 > a img { max-height: 100%; max-width: 100%; object-fit: contain; }
+
+/* Contact */
+#contact hr.divider {
+  width: 4rem;
+  height: 0.3rem;
+  margin: 1.5rem auto;
+  background: var(--j3k-yellow);
+  border: 0;
+  opacity: 1;
+}
+#contact h2::after { display: none; }
+#contact .form-control:focus {
+  border-color: var(--j3k-yellow);
+  box-shadow: 0 0 0 0.25rem rgba(255, 204, 0, 0.35);
+}
+#contact b { color: var(--j3k-yellow); }
+
+/* Footer */
+.footer {
+  background: var(--j3k-black) !important;
+  border-top: 0.25rem solid var(--j3k-yellow);
+  padding: 2.5rem 0;
+}

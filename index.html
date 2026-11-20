@@ -20,6 +20,9 @@
         <link href="base/css/styles.css" rel="stylesheet" />
         <link href="base/css/stylemotos.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+        <!-- Thème noir & jaune J3K (doit rester après les autres feuilles de style) -->
+        <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+        <link href="base/css/j3k-theme.css" rel="stylesheet" />
         
         <!-- Global site tag (gtag.js) - Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y9RHWJ1ZQZ"></script>
@@ -67,17 +70,21 @@
     <!-- ---------------------------------------------------------------------------------------------------------------------->
         <!-- Masthead-->
 
-        <header class="masthead" id="masthead">
-            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-                <div class="d-flex justify-content-center">
-                    <div class="text-center">
-                        <h1 class="mx-auto my-0 text-uppercase"> </h1>
-                        <h2 class="text-white-50 mx-auto mt-2 mb-5"> </h2>
-                        <a class="btn btn-primary" href="#presentation">Découvrir l'association </a>
-                    </div>
-                </div>
+        <header class="masthead hero-carousel" id="masthead">
+            <!-- Pour ajouter une photo : dupliquer une ligne hero-slide -->
+            <div class="hero-slide active" style="background-image: url('base/img/carousel/moto-virage.jpg'); background-position: 75% center;"></div>
+            <div class="hero-slide" style="background-image: url('base/img/carousel/moto-profil.jpg'); background-position: 30% center;"></div>
+
+            <div class="hero-content">
+                <img class="hero-logo" src="base/img/logo.png" alt="J3K Racing" />
+                <p class="hero-title">Championnat Motocross</p>
+                <span class="hero-subtitle">Saison 2027</span>
+                <a class="btn btn-primary" href="#presentation">Découvrir l'association</a>
             </div>
+
+            <div class="hero-dots"></div>
         </header>
+        <div class="j3k-stripe"></div>
 
         <!-- ---------------------------------------------------------Riders------------------------------------------------------------->
         
@@ -92,21 +99,7 @@
                         </p>
                     </div>
                 </div><br><br>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="base/img/portraitcc.png" alt="..." />
-                            <h4>Charles Coursieres</h4><br>
-                            <a class="btn-dark btn-social mx-2" href="https://www.instagram.com/chaarles_csr/" ><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="base/img/portraitad.png" alt="..." />
-                            <h4>Alban Dumontel</h4><br>
-                            <a class="btn-dark btn-social mx-2" href="https://www.instagram.com/albandmtl/" ><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
+                <div class="row justify-content-center">
                     <div class="col-lg-4">
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="base/img/portraitkr.png" alt="..." />
@@ -365,6 +358,7 @@ Je compte bien travailler comme il se doit pour obtenir de bons résultats malgr
         <!-- Contact-->
         
 
+    <div class="j3k-stripe"></div>
     <section class="page-section" id="contact" style="background: black;">
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
@@ -428,6 +422,50 @@ Je compte bien travailler comme il se doit pour obtenir de bons résultats malgr
         <!-- Footer-->
         <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; j3k-racing.fr 2024</div></footer>
         </section>
+
+        <script>
+            // Carousel d'en-tête
+            (function () {
+                var slides = document.querySelectorAll('.hero-slide');
+                var dotsBox = document.querySelector('.hero-dots');
+                var current = 0, timer;
+                if (slides.length < 2) return;
+
+                slides.forEach(function (_, i) {
+                    var dot = document.createElement('button');
+                    dot.type = 'button';
+                    dot.setAttribute('aria-label', 'Photo ' + (i + 1));
+                    dot.addEventListener('click', function () { show(i); restart(); });
+                    dotsBox.appendChild(dot);
+                });
+                var dots = dotsBox.querySelectorAll('button');
+
+                function show(i) {
+                    slides[current].classList.remove('active');
+                    dots[current].classList.remove('active');
+                    current = (i + slides.length) % slides.length;
+                    slides[current].classList.add('active');
+                    dots[current].classList.add('active');
+                }
+                function restart() {
+                    clearInterval(timer);
+                    timer = setInterval(function () { show(current + 1); }, 5000);
+                }
+
+                dots[0].classList.add('active');
+                restart();
+            })();
+
+            // Menu mobile (Bootstrap JS n'est pas chargé sur la page)
+            (function () {
+                var toggler = document.querySelector('#mainNav .navbar-toggler');
+                var menu = document.getElementById('navbarResponsive');
+                toggler.addEventListener('click', function () { menu.classList.toggle('show'); });
+                menu.querySelectorAll('.nav-link').forEach(function (link) {
+                    link.addEventListener('click', function () { menu.classList.remove('show'); });
+                });
+            })();
+        </script>
     </body>
 </html>
 
